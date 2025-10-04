@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Base colors */
+    --background: 210 30% 98%;
+    --foreground: 210 20% 15%;
+
+    /* Card colors */
+    --card: 0 0% 100%;
+    --card-foreground: 210 20% 15%;
+
+    /* Popover colors */
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 20% 15%;
+
+    /* Primary - Verde sustentável */
+    --primary: 152 65% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 152 70% 55%;
+
+    /* Secondary - Azul NASA/Tech */
+    --secondary: 210 80% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted */
+    --muted: 210 20% 95%;
+    --muted-foreground: 210 15% 45%;
+
+    /* Accent - Verde claro */
+    --accent: 152 60% 92%;
+    --accent-foreground: 152 70% 25%;
+
+    /* Destructive */
+    --destructive: 0 85% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border and input */
+    --border: 210 20% 88%;
+    --input: 210 20% 88%;
+    --ring: 152 65% 45%;
+
+    --radius: 0.75rem;
+    
+    /* Custom gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(152 65% 45%), hsl(210 80% 50%));
+    --gradient-hero: linear-gradient(180deg, hsl(152 70% 55% / 0.1), hsl(210 80% 50% / 0.1));
+    
+    /* Custom shadows */
+    --shadow-glow: 0 8px 32px hsl(152 65% 45% / 0.15);
+    --shadow-elevated: 0 12px 40px hsl(210 20% 15% / 0.08);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Base colors */
+    --background: 210 30% 8%;
+    --foreground: 210 20% 95%;
+
+    /* Card colors */
+    --card: 210 25% 12%;
+    --card-foreground: 210 20% 95%;
+
+    /* Popover colors */
+    --popover: 210 25% 12%;
+    --popover-foreground: 210 20% 95%;
+
+    /* Primary - Verde sustentável */
+    --primary: 152 65% 50%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 152 70% 60%;
+
+    /* Secondary - Azul NASA/Tech */
+    --secondary: 210 80% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted */
+    --muted: 210 20% 18%;
+    --muted-foreground: 210 15% 65%;
+
+    /* Accent - Verde escuro */
+    --accent: 152 40% 18%;
+    --accent-foreground: 152 70% 70%;
+
+    /* Destructive */
+    --destructive: 0 75% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border and input */
+    --border: 210 20% 20%;
+    --input: 210 20% 20%;
+    --ring: 152 65% 50%;
+    
+    /* Custom gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(152 65% 50%), hsl(210 80% 55%));
+    --gradient-hero: linear-gradient(180deg, hsl(152 70% 60% / 0.1), hsl(210 80% 55% / 0.1));
+    
+    /* Custom shadows */
+    --shadow-glow: 0 8px 32px hsl(152 65% 50% / 0.2);
+    --shadow-elevated: 0 12px 40px hsl(0 0% 0% / 0.5);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+}
